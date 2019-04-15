@@ -1,0 +1,17 @@
+{
+  "name": "Backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/olympiawoj/Backend.git",
+  "author": "olympia <owojcik7@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon --inspect"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
