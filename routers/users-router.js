@@ -1,5 +1,5 @@
 const router = require("express").Router();
-import Users from "users-helpers.js";
+// import Users from "users-helpers.js";
 
 //Register or CREATE- takes in username, email, password, returns object with new user
 router.post("/register", async (req, res) => {
