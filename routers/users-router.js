@@ -1,7 +1,7 @@
 const router = require("express").Router();
 // import Users from "users-helpers.js";
 
-//Register or CREATE- takes in username, email, password, returns object with new user
+//Register or CREATE- takes in email, password, returns object with new user
 router.post("/register", async (req, res) => {
   let user = req.body;
   if (!user.email || !user.password) {
@@ -17,7 +17,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-//LOGIN- auth required, takes in username and password, returns message, username, and token
+//LOGIN- auth required, takes in email and password, returns message, email, and token
 //To do: Create token, add bcrypt, and return token along with message.
 router.post("/login", async (req, res) => {
   let { email, password } = req.body;
