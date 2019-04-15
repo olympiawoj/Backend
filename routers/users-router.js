@@ -4,17 +4,15 @@ import Users from "users-helpers.js";
 //Register or CREATE- takes in username, email, password, returns object with new user
 router.post("/register", async (req, res) => {
   let user = req.body;
-  if (!user.username || !user.email || !user.password) {
+  if (!user.email || !user.password) {
     res.status(401).json({
-      message: "Username, email, and password are required for registration"
+      message: "Email and password are required for registration"
     });
   }
-
   try {
     const newUser = await Users.register(user);
     res.status(200).json(newUser);
   } catch (error) {
-    console.log(error);
     res.status(500).json({ message: "Error registering user" });
   }
 });
@@ -22,12 +20,12 @@ router.post("/register", async (req, res) => {
 //LOGIN- auth required, takes in username and password, returns message, username, and token
 //To do: Create token, add bcrypt, and return token along with message.
 router.post("/login", async (req, res) => {
-  let { username, password } = req.body;
+  let { email, password } = req.body;
   try {
-    if (username && password) {
+    if (email && password) {
       res,
         status(200).json({
-          message: `Welcome ${user.username}`,
+          message: `Welcome ${user.email}`,
           username,
           token
         });
